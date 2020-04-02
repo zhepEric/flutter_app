@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/utils/log_utils.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -19,10 +20,43 @@ class HomePageState extends State<HomePage> {
     print("====jumpt=result=$result"); //如果成功跳转返回success参数提示
   }
 
+  ///执行的第一个方法，一般做初始化操作
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    LogUtil.i("HomePage", "---------initState--------");
+  }
+
+  ///生命周期中第二个会被执行的方法
+  ///context 可以使用
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    LogUtil.i("HomePage", "---------didChangeDependencies--------");
+
+  }
+
+  ///接着执行该方法
+  @override
+  void didUpdateWidget(HomePage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    LogUtil.i("HomePage", "---------didUpdateWidget--------");
+
+  }
 
   @override
+  void dispose() {
+    LogUtil.i("HomePage", "---------dispose--------");
+
+    super.dispose();
+  }
+
+  //
+  @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    LogUtil.i("HomePage", "---------build--------");
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -56,6 +90,15 @@ class HomePageState extends State<HomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            FloatingActionButton(
+              onPressed: (){
+                setState(() {
+                  _counter++;
+
+                });
+              },
+              child: Icon(Icons.add),
+            )
           ],
         ),
       ),

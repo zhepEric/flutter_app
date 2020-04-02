@@ -1,16 +1,26 @@
 # flutter_app
+概念
+Widget
+1、分为两种，一种是可变StatefulWidget、一种是不可变StatelessWidget
+1)Text、Row、Column 和 Container都是继承自StatelessWidget
+StatelessWidget生命周期：
+初始化
+build
 
-A new Flutter application.
+StatefulWidget生命周期：
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Context
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+State
+
+InheritedWidget
+InheritedWidget 允许在 widget 树中有效地向下传播（和共享）信息。
+当有多个Widget需要用到相同的数据时，传递数据很混乱，这时采用InheritedWidget将数据存储起来，随用随取，
+
+
+
+BuildContext\Element
+Element implements BuildContext
